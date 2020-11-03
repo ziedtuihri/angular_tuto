@@ -1,0 +1,26 @@
+<h1>Ajouter un étudiant</h1>
+<form>
+  <div class="form-group">
+    <label>Nom</label>
+    <input type="text" [value]="st.nom" name="nom" class="form-control" #nom/>
+  </div>
+  <div class="form-group">
+    <label>Prénom</label>
+    <input type="text" [value]="st.prenom" name="prenom" class="form-control" #prenom/>
+  </div>
+  <div class="form-group">
+    <label>classe</label>
+    <select [value]="st.classe" class="form-control" #classe>
+      <option value="MPDAM1">MPDAM1</option>
+      <option value="MPDAM2">MPDAM2</option>
+      <option value="L3DSI">L3DSI</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <input type="button"
+           value="Valider" 
+           class="btn btn-primary"
+           (click)="addStudent(nom, prenom, classe)"/>
+  </div>
+
+</form>

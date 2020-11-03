@@ -16,22 +16,25 @@
             <td> {{ student.firstName }} </td>
             <td> {{ student.lastName }} </td>
             <td> {{ student.class }} </td>
-            <td><button type="button" class="btn btn-primary" id="{{i}}">Update</button></td>
+            <td><button type="button" class="btn btn-primary"  (click)="update(i)">Update</button></td>
         </tr>
         </tbody>
         </table>
     </div>
 
-
+    <!-- 
+         [formGroup]="updateForm" (ngSubmit)="onSubmit()"
+         [formGroup]="updateForm" (ngSubmit)="onSubmit(updateForm.value)"
+    -->
     <div class="card m-3">
         
         <h5 class="card-header"> Update selected student </h5>
         <div class="card-body">
-            <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+            <form>
             <div class="form-row">
                 <div >
                     <label> First Name</label>
-                    <input type="text" formControlName="firstName" class="form-control" />
+                    <input #firstName type="text" formControlName="firstName" class="form-control" />
                 </div>
             </div>
             <div class="form-row">
@@ -53,4 +56,6 @@
             </form>
         </div>
     </div>
+    
+
   
