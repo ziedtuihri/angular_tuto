@@ -1,0 +1,30 @@
+<h3>update-student works!</h3>
+
+<form>
+    <div class="form-group">
+        <label>
+            First Name:
+        </label>
+        <input #firstName type="text" [value]="studentInput.firstName" name="firstName" class="form-controle">
+    </div>
+    <div class="form-group">
+        <label>
+            Last Name:
+        </label>
+        <input #lastName type="text" [value]="studentInput.lastName" name="lastName" classs="form-controle">
+    </div>
+    <div class="form-group">
+        <label>
+            Class:
+        </label>
+        <select class="ui-selectable-helper" [value]="studentInput.classe" #classe>
+            <option value="MPDAM">MPDAM</option>
+            <option value="BI">BI</option>
+            <option value="DSI31">DSI31</option>
+        </select>
+    </div>
+    <br>
+    <button type="button"
+     (click)="updateStudent(firstName, lastName, classe)"
+      class="btn btn-primary">Vildate</button>
+</form>
