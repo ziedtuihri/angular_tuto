@@ -1,0 +1,19 @@
+#votesNumber{
+    background-color: #DCDCDC;
+}
+
+#votesNumber1{
+    background-color: #DCDCDC;
+    height: 80px;
+    width: 110px;
+    text-align: center;
+}
+
+h3{
+    margin-top: 7%;
+}
+
+#buttonUp{
+    margin-right : 10px;
+}
+

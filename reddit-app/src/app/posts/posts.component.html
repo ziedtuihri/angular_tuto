@@ -1,0 +1,30 @@
+
+<br>
+<div class="container col-6">
+    <h2> this your posts her !! </h2>
+
+    <table class="table" style="border:2px; border-color: black;">
+        <tbody>
+            <tr *ngFor="let post of posts; let i = index">
+                <div>
+                    <td id="votesNumber1">
+                        <h3>{{ post.point }} <br>Points</h3>
+                    </td>
+                    <td>
+                        <tr><h3> {{ post.title }}</h3></tr>
+                        <tr> ( {{ post.link }} ) </tr>
+                        <tr> 
+                            <button class="btn btn-primary" id="buttonUp"> up </button>
+                            <button class="btn btn-primary"> down </button>
+                        </tr>
+                    </td>
+                    <br>
+                </div>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+

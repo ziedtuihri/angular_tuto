@@ -19,9 +19,12 @@
     </div>
     <button 
     type="button" 
-    class="btn btn-success">
+    class="btn btn-success"
+    (click)="addPost(title, link)">
     Submit link
   </button>
     <br><br>
   </form>
 </div>
+
+<app-posts [post]="post" [newPost]="newPost"> </app-posts>
