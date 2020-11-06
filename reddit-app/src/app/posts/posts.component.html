@@ -14,8 +14,8 @@
                         <tr><h3> {{ post.title }}</h3></tr>
                         <tr> ( {{ post.link }} ) </tr>
                         <tr> 
-                            <button class="btn btn-primary" id="buttonUp"> up </button>
-                            <button class="btn btn-primary"> down </button>
+                            <button class="btn btn-primary" id="buttonUp" (click)="upVote(i, post)"> up </button>
+                            <button class="btn btn-primary" (click)="downVote(i, post)"> down </button>
                         </tr>
                     </td>
                     <br>

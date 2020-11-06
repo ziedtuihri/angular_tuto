@@ -10,18 +10,23 @@ import { Post } from '../models/post';
 export class Posts implements OnInit {
     
     posts: Post[];
-
     @Input() post;  
+
+    upVote(index:number, post:Post){
+        this.posts[index].point = post.point + 1;
+    }
+
+    downVote(index:number, post:Post){
+        this.posts[index].point = post.point - 1;
+    }
 
     ngOnInit(): void {
 
         if(this.post){
-            var myPost = this.post;
             this.post.subscribe(data => {
                 this.posts.push(data);
             });
         }
-
         this.posts = [
             new Post("My Title 1", "link1.com", 0),
             new Post("My Title 2", "link2.com", 1),
@@ -29,7 +34,5 @@ export class Posts implements OnInit {
         ];
     
     }
-
     constructor(){}
-
 }
