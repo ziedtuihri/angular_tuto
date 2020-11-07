@@ -10,7 +10,7 @@ import { Post } from './models/post';
 export class AppComponent {
 
   title = 'reddit-app';
-  private post: EventEmitter<Post> = new EventEmitter();
+  post: EventEmitter<Post> = new EventEmitter();
 
   addPost(title: HTMLFormElement, link: HTMLFormElement){
     let newPost = new Post(title.value, link.value, 0);
