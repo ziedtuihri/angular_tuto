@@ -16,35 +16,13 @@ export class Posts implements OnInit {
     upVote(indexPost:number, post:Post){
 
         this.posts[indexPost].point = post.point + 1;
-        
-        for(let i=0;i<this.posts.length;i++){
-            if(this.posts[i].point < post.point){
-                //this.allPost.push(post);
-               //this.posts.splice(indexPost, 1);
-           }else{
-                this.allPost.push(this.posts[i]);
-           }
-           console.log("button up  " + this.allPost + "  index  "+ i);
-        }
 
-       /*
-        this.posts.forEach(function (value ,index){
-            
-            if(value.point < post.point){
-                 //this.allPost.push(post);
-                //this.posts.splice(indexPost, 1);
-            }else{
-                // allPost.push(value);
-            }
-            console.log("button up  " + value.point + "  index  "+ index);
-        }); 
-
-        */
-        this.posts = this.allPost;
+        this.posts.sort((a, b)=>(a.point < b.point) ? 1 : -1);
     }
 
     downVote(index:number, post:Post){
         this.posts[index].point = post.point - 1;
+        this.posts.sort((a, b)=> (a.point < b.point) ? 1 : -1);
     }
 
     ngOnInit(): void {
