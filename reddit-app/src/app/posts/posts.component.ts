@@ -16,12 +16,15 @@ export class Posts implements OnInit {
     upVote(indexPost:number, post:Post){
 
         this.posts[indexPost].point = post.point + 1;
-
-        this.posts.sort((a, b)=>(a.point < b.point) ? 1 : -1);
+        this.sort();
     }
 
     downVote(index:number, post:Post){
         this.posts[index].point = post.point - 1;
+        this.sort();
+    }
+
+    sort(){
         this.posts.sort((a, b)=> (a.point < b.point) ? 1 : -1);
     }
 
@@ -30,6 +33,7 @@ export class Posts implements OnInit {
         if(this.post){
             this.post.subscribe(data => {
                 this.posts.push(data);
+                this.sort();
             });
         }
         this.posts = [
