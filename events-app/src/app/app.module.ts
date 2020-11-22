@@ -3,14 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddEventComponent } from './add-event/add-event.component';
-import { ShowVentComponent } from './show-vent/show-vent.component';
+import { ShowEventsComponent } from './show-events/show-events.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddEventComponent,
-    ShowVentComponent
+    ShowEventsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowVentComponent } from './show-vent.component';
+import { ShowEventsComponent } from './show-events.component';
 
-describe('ShowVentComponent', () => {
-  let component: ShowVentComponent;
-  let fixture: ComponentFixture<ShowVentComponent>;
+describe('ShowEventsComponent', () => {
+  let component: ShowEventsComponent;
+  let fixture: ComponentFixture<ShowEventsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShowVentComponent ]
+      declarations: [ ShowEventsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShowVentComponent);
+    fixture = TestBed.createComponent(ShowEventsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
