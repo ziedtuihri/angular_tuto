@@ -1,20 +1,30 @@
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ShowEventsComponent } from './show-events/show-events.component';
+import { AppComponent }   from './app.component';
+
+import { CalendarModule } from 'primeng/calendar';
+import { CardModule } from 'primeng/card';
+import { ShowEventComponent } from './show-event/show-event.component';
+import { AddEventComponent } from './add-event/add-event.component';
+import { ButtonModule } from 'primeng/button';
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ShowEventsComponent,
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    CalendarModule,
+    FormsModule,
+    CardModule,
+    InputSwitchModule,
+    ButtonModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [ AppComponent, ShowEventComponent, AddEventComponent ],
+  bootstrap:    [ AppComponent ]
 })
+
 export class AppModule { }
