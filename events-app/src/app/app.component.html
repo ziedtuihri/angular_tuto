@@ -18,9 +18,9 @@
                     </div>
                     <div  class="p-col-2">
                         <button pButton pRipple type="button" label="Update"
-                         class="p-button-raised p-button-text"></button>
+                         class="p-button-raised p-button-text" (click)="showUpdate(event, i)"></button>
                     </div>
-                    <div class="p-col-3">
+                    <div class="p-col-2">
                         <button pButton pRipple type="button" label="Delete" (click)="deleteEvent(i)"
                          class="p-button-raised p-button-danger p-button-text"></button> 
                     </div>                    
@@ -32,12 +32,16 @@
                 </div>
             </div>
         </div>
-    </div>    
-
-    
+    </div>   
+    <div class="p-col-2">
+            <button pButton pRipple type="button"
+            label="Add" (click)="showAdd()"
+            class="p-button-rounded p-button-success"></button>  
+    </div> 
 </div>
-<app-add-event (eventAdd)="addEvent($event)"></app-add-event>
 
+<app-update-event *ngIf="mode == 'update'" [updateEvent]="activEvent" (eventUpdate)="update($event)" ></app-update-event>
+<app-add-event *ngIf="mode == 'add'" (eventAdd)="addEvent($event)"></app-add-event>
 
 
 

@@ -11,6 +11,10 @@ export class AppComponent {
 
 
     events: Event[];
+    mode: string;
+
+    activEvent: Event;
+    acticIndex: number;
 
     addEvent(event:Event){
         if(localStorage.getItem('Events') != null )
@@ -27,6 +31,21 @@ export class AppComponent {
       deleteEvent(index:number){
         this.events.splice(index, 1);
         localStorage.setItem('Events', JSON.stringify(this.events));
+      }
+
+      showAdd(){
+        this.mode = "add";
+      }
+
+      showUpdate(event: Event, index:number){
+          this.mode = "update";
+          this.acticIndex = index;
+          this.activEvent = event;
+      }
+
+      update(event: Event){
+          this.events[this.acticIndex] = event;
+          localStorage.setItem('Events', JSON.stringify(this.events));
       }
 
     ngOnInit() {

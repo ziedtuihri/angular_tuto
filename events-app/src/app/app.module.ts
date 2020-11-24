@@ -14,6 +14,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
+import { UpdateEventComponent } from './update-event/update-event.component';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
     InputTextModule,
     VirtualScrollerModule
   ],
-  declarations: [ AppComponent, ShowEventComponent, AddEventComponent ],
+  declarations: [ AppComponent, ShowEventComponent, AddEventComponent, UpdateEventComponent ],
   bootstrap:    [ AppComponent ]
 })
 

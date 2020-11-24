@@ -42,9 +42,14 @@ export class AddEventComponent implements OnInit {
                             this.endDate.toLocaleDateString(),
                             this.description, this.owner,
                             Math.floor(Math.random() * (6 - 1 + 1) + 1).toString());
+      this.title= "";
+      this.startDate = null;
+      this.endDate = null;
+      this.description = "";
+      this.owner = "";
+
 
     this.eventAdd.emit(this.event);               
-     console.log("all events " + localStorage.getItem('Events'));
   }
 
   ngOnInit(): void {
