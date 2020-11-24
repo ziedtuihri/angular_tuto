@@ -1,3 +1,43 @@
-<app-add-event></app-add-event>
+
+
+<div class="p-col-10 p-offset-2">
+    <h1 id="h1Events">All Events </h1>
+    <div class="p-grid">
+        <div class="p-col-12 p-md-8 drag-column">
+            <div *ngFor="let event of events; let i = index;" class="p-d-inline">
+                <div class="event-item" pDraggable="events" (onDragStart)="dragStart(event)" (onDragEnd)="dragEnd()">
+                    <div class="image-container">
+                            <img src="assets/{{ event.image }}.gif" 
+                            [alt]="event.title"
+                            class="event-image" style="width:200px; "/>
+                    </div>
+                    <div class="event-list-detail">
+                        <h3 class="p-mb-2">{{ event.title }}</h3>
+                        <span class="event-category">{{ event.ownerName }}</span><br>
+                        <span class="event-description">{{ event.description }}</span>
+                    </div>
+                    <div  class="p-col-2">
+                        <button pButton pRipple type="button" label="Update"
+                         class="p-button-raised p-button-text"></button>
+                    </div>
+                    <div class="p-col-3">
+                        <button pButton pRipple type="button" label="Delete" (click)="deleteEvent(i)"
+                         class="p-button-raised p-button-danger p-button-text"></button> 
+                    </div>                    
+
+                    <div class="event-list-action">
+                        <h5 style="color:green;">{{ event.startDate }}</h5>
+                                              <h5 style="color:red;">{{ event.endDate }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    
+</div>
+<app-add-event (eventAdd)="addEvent($event)"></app-add-event>
+
+
 
 

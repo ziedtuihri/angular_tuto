@@ -12,6 +12,9 @@ import { ShowEventComponent } from './show-event/show-event.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import { ButtonModule } from 'primeng/button';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { InputTextModule } from 'primeng/inputtext';
+import { VirtualScrollerModule } from 'primeng/virtualscroller';
+
 
 @NgModule({
   imports: [
@@ -21,7 +24,9 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     FormsModule,
     CardModule,
     InputSwitchModule,
-    ButtonModule
+    ButtonModule,
+    InputTextModule,
+    VirtualScrollerModule
   ],
   declarations: [ AppComponent, ShowEventComponent, AddEventComponent ],
   bootstrap:    [ AppComponent ]

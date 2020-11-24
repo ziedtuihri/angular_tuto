@@ -4,17 +4,20 @@ export class Event {
     public endDate: string;
     public description: string;
     public ownerName: string; 
+    public image: string;
 
     constructor(title:string,
                 startDate:string,
                 endDate:string,
                 description?:string,
-                ownerName?:string){
+                ownerName?:string,
+                image?: string){
         this.title = title;
         this.startDate = startDate;
         this.endDate = endDate;
         this.description = description;
         this.ownerName = ownerName;
+        this.image = image;
     }
 
     getTitle(): string{

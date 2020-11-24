@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Input, Output, EventEmitter } from '@angular/core';
 import { Event } from '../model/event';
 
 @Component({
@@ -9,10 +9,12 @@ import { Event } from '../model/event';
 })
 export class AddEventComponent implements OnInit {
 
-  events: Event[];
   event: Event;
 
   constructor() { }
+
+  @Input("Event") evt;
+  @Output() eventAdd = new EventEmitter<Event>();
 
   startDate: Date;
   endDate: Date;
@@ -35,24 +37,17 @@ export class AddEventComponent implements OnInit {
 
 
   addEvent(){
-     this.events = JSON.parse(localStorage.getItem("Events"));
-     this.events.push(new Event(this.title,
-                                this.startDate.toLocaleDateString(),
-                                this.endDate.toLocaleDateString(),
-                                this.description, this.owner));
+     this.event = new Event(this.title,
+                            this.startDate.toLocaleDateString(),
+                            this.endDate.toLocaleDateString(),
+                            this.description, this.owner,
+                            Math.floor(Math.random() * (6 - 1 + 1) + 1).toString());
 
-     localStorage.setItem('Events', JSON.stringify(this.events));
+    this.eventAdd.emit(this.event);               
      console.log("all events " + localStorage.getItem('Events'));
   }
 
   ngOnInit(): void {
-
-    this.events = [
-      new Event("Title","11/11/2020","12/11/2020","description","owner"),
-      new Event("Title 2","13/11/2020","15/11/2020","description 2","owner 2")
-    ];
-
-    console.log("all events \n" + localStorage.getItem('Events'));
 
     this.es = {
       firstDayOfWeek: 1,
