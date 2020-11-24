@@ -1,0 +1,35 @@
+<div class="p-fluid p-grid">
+    <div class="p-col-10 p-offset-2">
+        <h1 id="h1Events">Events Form Update</h1><br>
+            <div class="p-field p-grid">
+                <div class="p-field p-col-3">
+                    <label for="inputtitle">  <b>Title</b> </label><br>
+                    <input type="text" id="inputtitle" pInputText [(ngModel)]="title" [value]="evt.title" > 
+                </div>
+                <div class="p-field p-col-3">
+                    <label for="icon"><b>Start Date</b></label>
+                    <p-calendar [(ngModel)]="startDate" [showIcon]="true" inputId="icon" dateFormat="mm-dd-yy"></p-calendar>
+                </div>
+                <div class="p-field p-col-3">
+                    <label for="icon"><b>End Date</b></label>
+                    <p-calendar [(ngModel)]="endDate" [showIcon]="true" inputId="icon" dateFormat="mm-dd-yy"></p-calendar>
+                </div>
+            </div>
+    
+            <div class="p-field p-grid">
+                <div class="p-field p-col-3">
+                    <label for="inputowner">  <b>Owner</b> </label><br>
+                    <input type="text" id="inputowner" pInputText [(ngModel)]="owner" [value]="evt.ownerName">
+                </div>
+                <div class="p-col-6">
+                    <label for="textarea"><b>Description</b></label><br>
+                    <textarea inputId="textarea" rows="3" cols="30" [(ngModel)]="description" pInputTextarea [value]="evt.description"></textarea>
+                </div>
+            </div>
+        <div class="p-col-2">
+            <button pButton pRipple type="button"
+            label="Validate" (click)="updateEvent()"
+            class="p-button-rounded p-button-success"></button>  
+        </div>
+   
+</div>
